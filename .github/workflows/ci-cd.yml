@@ -21,7 +21,7 @@ jobs:
     - name: Run tests
       run: |
         python -m pytest
-deploy:
+  deploy:
     needs: test # This job runs only if the 'test' job succeeds
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # This job runs only on pushes to main
     runs-on: ubuntu-latest
